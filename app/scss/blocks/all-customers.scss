@@ -1,0 +1,144 @@
+.all-customers {
+	--steps-w: 40px;
+
+	position: relative;
+	background-color: var(--color-white);
+	border-radius: 30px;
+	padding: 30px var(--steps-w) 40px;
+
+	@include desktop {
+		--steps-w: 25px;
+
+		padding: 25px var(--steps-w) 30px;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		column-gap: 20px;
+		margin-bottom: 26px;
+
+		@include mobile {
+			flex-direction: column;
+			row-gap: 15px;
+		}
+
+		&-info {
+			display: flex;
+			flex-direction: column;
+			row-gap: 7px;
+		}
+
+		&-status {
+			color: var(--color-green);
+		}
+	}
+
+	&__search-field {
+		width: 217px;
+
+		@include mobile {
+			width: 100%;
+		}
+	}
+
+	&__body {
+		@include desktop {
+			overflow-x: auto;
+		}
+	}
+
+	&__data {
+		width: 100%;
+		margin-bottom: 30px;
+		border-collapse: collapse;
+		text-align: left;
+		font-weight: 500;
+
+		@include desktop {
+			white-space: nowrap;
+		}
+
+		& > thead > tr {
+			border-bottom: 1px solid var(--color-gray-alt-3);
+		}
+
+		& > tbody > tr {
+			border-bottom: 1px solid var(--color-gray-alt-3);
+
+			& a {
+				@include transitions(color);
+
+				@include hover {
+					color: var(--color-accent);
+				}
+			}
+		}
+
+		& th {
+			position: relative;
+			color: var(--color-gray-alt);
+
+			&:first-child::before,
+			&:last-child::after {
+				content: '';
+				position: absolute;
+				bottom: -1px;
+				height: 1px;
+				width: var(--steps-w);
+				background-color: var(--color-gray-alt-3);
+
+				@include desktop {
+					display: none;
+				}
+			}
+
+			&:first-child::before {
+				left: calc(var(--steps-w) / -1);
+			}
+			
+			&:last-child::after {
+				right: calc(var(--steps-w) / -1);
+			}
+		}
+
+		& th,
+		& td {
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			padding: 14px 28px;
+
+			@include desktop { 
+				padding: 12px 10px;
+			}
+		}
+
+		& td {
+			color: var(--color-black-alt);
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 20px;
+
+		@include table {
+			flex-direction: column;
+			row-gap: 20px;
+		}
+
+		&-text {
+			font-weight: 500;
+			color: var(--color-gray-alt);
+		}
+	}
+
+}

@@ -1,0 +1,33 @@
+.menu {
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 22px;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		column-gap: 14px;
+		padding: 11px;
+		border-radius: 8px;
+		color: var(--color-gray);
+		@include transitions(background-color color);
+
+		@include hover {
+			background-color: var(--color-accent);
+			color: var(--color-white);
+		}
+
+		&--active {
+			background-color: var(--color-accent);
+			color: var(--color-white);
+		}
+
+		&>span {
+			font-weight: 500;
+			margin-right: auto;
+		}
+	}
+}

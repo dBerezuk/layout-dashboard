@@ -1,0 +1,42 @@
+.head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 41px;
+	margin-bottom: 50px;
+
+	@include table {
+		margin-bottom: 30px;
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 500;
+	}
+
+	@include desktop {
+		&__button {
+			@include square(44px);
+			@include transitions(scale);
+
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: var(--color-accent);
+
+				box-shadow: 0 12px 0 var(--color-accent), 0 -12px 0 var(--color-accent);
+			}
+
+			@include hover {
+				scale: 1.05;
+			}
+		}
+	}
+}

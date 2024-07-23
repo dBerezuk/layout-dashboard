@@ -1,0 +1,17 @@
+.logo {
+	display: flex;
+	align-items: center;
+	column-gap: 4px;
+
+	&__image {}
+
+	&>span {
+		margin-top: 12px;
+		font-size: 10px;
+		color: var(--color-gray-alt-4);
+
+		@include mobile {
+			display: none;
+		}
+	}
+}

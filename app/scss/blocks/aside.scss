@@ -1,0 +1,34 @@
+.aside {
+	max-width: 306px;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-white);
+	padding: 36px 28px 76px;
+	row-gap: 64px;
+	z-index: 2;
+	overflow-y: auto;
+
+	@include desktop {
+		@include transitions(translate);
+
+		translate: -100% 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: 100%;
+
+		&.aside--active {
+			translate: 0;
+		}
+	}
+
+	@include mobile {
+		max-width: 250px;
+	}
+
+	&__body {
+		margin-bottom: auto;
+	}
+}

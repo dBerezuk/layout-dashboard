@@ -1,0 +1,173 @@
+@@include('header.html')
+
+<div class="content">
+	@@include('aside.html')
+	<main class="main animate__animated animate__rotateInUpRight">
+		<h1 class="visually-hidden">Customers</h1>
+		@@include('head.html')
+		<section class="all-customers">
+			<header class="all-customers__header">
+				<div class="all-customers__header-info">
+					<h2 class="title">All Customers</h2>
+					<span class='all-customers__header-status'>Active Members</span>
+				</div>
+				<search>
+					<form class="all-customers__search">
+						<div class='field'>
+							<label class="visually-hidden" for="search">Search</label>
+							<input 
+								class='all-customers__search-field field__input field__input--search' 
+								id="search" 
+								type="search" 
+								placeholder="Search"
+							/>	
+						</div>
+					</form>
+				</search>
+			</header>
+			<div class="all-customers__body">
+				<table class="all-customers__data">
+					<thead>
+						<tr>
+							<th>Customer Name</th>
+							<th>Company</th>
+							<th>Phone Number</th>
+							<th>Email</th>
+							<th>Country</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Jane Cooper</td>
+							<td>Microsoft</td>
+							<td>
+								<a href='tel:+2555550118'>(225) 555-0118</a>
+							</td>
+							<td>
+								<a href='mailto:jane@microsoft.com'>jane@microsoft.com</a>
+							</td>
+							<td>United States</td>
+							<td>
+								@@include('status.html', {
+									value: 'Active',
+									inactive: ''
+								})
+							</td>
+						</tr>
+						<tr>
+							<td>Jane Cooper</td>
+							<td>Microsoft</td>
+							<td>
+								<a href='tel:+2555550118'>(225) 555-0118</a>
+							</td>
+							<td>
+								<a href='mailto:jane@microsoft.com'>jane@microsoft.com</a>
+							</td>
+							<td>United States</td>
+							<td>
+								@@include('status.html', {
+									value: 'Inactive',
+									inactive: 'status--inactive'
+								})
+							</td>
+						</tr>
+						<tr>
+							<td>Jane Cooper</td>
+							<td>Microsoft</td>
+							<td>
+								<a href='tel:+2555550118'>(225) 555-0118</a>
+							</td>
+							<td>
+								<a href='mailto:jane@microsoft.com'>jane@microsoft.com</a>
+							</td>
+							<td>United States</td>
+							<td>
+								@@include('status.html', {
+									value: 'Inactive',
+									inactive: 'status--inactive'
+								})
+							</td>
+						</tr>
+						<tr>
+							<td>Jane Cooper</td>
+							<td>Microsoft</td>
+							<td>
+								<a href='tel:+2555550118'>(225) 555-0118</a>
+							</td>
+							<td>
+								<a href='mailto:jane@microsoft.com'>jane@microsoft.com</a>
+							</td>
+							<td>United States</td>
+							<td>
+								@@include('status.html', {
+									value: 'Active',
+									inactive: ''
+								})
+							</td>
+						</tr>
+						<tr>
+							<td>Jane Cooper</td>
+							<td>Microsoft</td>
+							<td>
+								<a href='tel:+2555550118'>(225) 555-0118</a>
+							</td>
+							<td>
+								<a href='mailto:jane@microsoft.com'>jane@microsoft.com</a>
+							</td>
+							<td>United States</td>
+							<td>
+								@@include('status.html', {
+									value: 'Active',
+									inactive: ''
+								})
+							</td>
+						</tr>
+						<tr>
+							<td>Jane Cooper</td>
+							<td>Microsoft</td>
+							<td>
+								<a href='tel:+2555550118'>(225) 555-0118</a>
+							</td>
+							<td>
+								<a href='mailto:jane@microsoft.com'>jane@microsoft.com</a>
+							</td>
+							<td>United States</td>
+							<td>
+								@@include('status.html', {
+									value: 'Active',
+									inactive: ''
+								})
+							</td>
+						</tr>
+						<tr>
+							<td>Jane Cooper</td>
+							<td>Microsoft</td>
+							<td>
+								<a href='tel:+2555550118'>(225) 555-0118</a>
+							</td>
+							<td>
+								<a href='mailto:jane@microsoft.com'>jane@microsoft.com</a>
+							</td>
+							<td>United States</td>
+							<td>
+								@@include('status.html', {
+									value: 'Inactive',
+									inactive: 'status--inactive'
+								})
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<footer class="all-customers__footer">
+				<p class="all-customers__footer-text">
+					Showing data 1 to 8 of 256K entries
+				</p>
+				@@include('paginate.html')
+			</footer>
+		</section>
+	</main>
+</div>
+
+@@include('footer.html')

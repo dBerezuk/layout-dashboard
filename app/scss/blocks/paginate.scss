@@ -1,0 +1,33 @@
+.paginate {
+	display: flex;
+	align-items: center;
+	column-gap: 12px;
+
+	&__item {
+		font-size: 12px;
+		font-weight: 500;
+
+		&--y-end {
+			align-self: flex-end;
+		}
+	}
+
+	&__link {
+		@include square(25px);
+		@include transitions(background-color border-color color);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--color-gray-alt-2);
+		border: 1px solid var(--color-gray-alt-3);
+		border-radius: 4px;
+		color: var(--color-black-alt-2);
+
+		@include hover {
+			background-color: var(--color-accent);
+			border-color: var(--color-accent);
+			color: var(--color-white);
+		}
+	}
+}

@@ -1,0 +1,53 @@
+.visually-hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	border: 0 !important;
+	padding: 0 !important;
+	white-space: nowrap !important;
+	clip-path: inset(100%) !important;
+	clip: rect(0, 0, 0, 0) !important;
+	overflow: hidden !important;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 22px;
+}
+
+.field,
+.field::placeholder {
+	font: inherit;
+	font-size: 12px;
+}
+
+.field {
+	&__input {
+		@include transitions(background-color border-color);
+
+		display: block;
+		height: var(--input-height);
+		background-color: var(--color-light-gray);
+		border-radius: 10px;
+		padding-inline: 8px;
+		border: 1px solid transparent;
+
+		&--search {
+			padding-left: 40px;
+			background-image: url('./../images/icons/search.svg');
+			background-repeat: no-repeat;
+			background-position: left 8px center;
+		}
+
+		&:focus {
+			outline: none;
+			border: 1px solid var(--color-accent);
+			background-color: var(--color-gray-alt-3);
+		}
+
+		@include hover {
+			background-color: var(--color-gray-alt-3);
+		}
+	}
+}
